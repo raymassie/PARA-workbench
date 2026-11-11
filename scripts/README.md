@@ -90,7 +90,7 @@ The inactive examples in `scripts/launchd/*.plist.template` contain generic
 substitution tokens, not a user's paths or identity. Run
 `python3 scripts/render-schedules.py` to generate real definitions in ignored
 `.local/launchd/` for this checkout; optionally set `--vault`, `--output`, or
-`--label-prefix`. The default prefix is `org.para-librarian`. Example times can be
+`--label-prefix`. The default prefix is `org.para-workbench`. Example times can be
 edited before rendering. Generation never installs or activates jobs. Configure
 the chosen assistant command and verify its job environment before any separately
 requested scheduling. Existing installed jobs are not changed by these templates.

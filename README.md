@@ -1,4 +1,4 @@
-# PARA-librarian
+# PARA-workbench
 
 An expanded, model-neutral companion to [PARA-brain](https://github.com/raymassie/PARA-brain),
 which remains the lightweight foundation. This repository preserves its Git history

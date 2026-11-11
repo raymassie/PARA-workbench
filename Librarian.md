@@ -211,7 +211,7 @@ they may not alter the notes they analyze. No jobs are installed automatically.
 
 ## Repository ownership
 
-PARA-librarian owns vault material: instructions, notes, wiki indexes, status summaries,
+PARA-workbench owns vault material: instructions, notes, wiki indexes, status summaries,
 context, decisions, digests, templates, and prompts. Project-owned source code,
 tests, assets, configuration, and implementation documentation may remain under
 `01-projects/<project>/` in an independent nested Git repository. Nesting itself

@@ -1,6 +1,6 @@
 ---
 name: librarian-controller
-description: Coordinate PARA-librarian work using content strategist, copywriter, designer, dev, editor, PM, researcher, and strategist specialists when needed. Use for specialist delegation and integration; handle routine vault filing directly.
+description: Coordinate PARA-workbench work using content strategist, copywriter, designer, dev, editor, PM, researcher, and strategist specialists when needed. Use for specialist delegation and integration; handle routine vault filing directly.
 ---
 
 # Librarian controller

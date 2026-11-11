@@ -5,7 +5,7 @@ from pathlib import Path
 import plistlib
 import re
 
-def render(vault, output, prefix='org.para-librarian'):
+def render(vault, output, prefix='org.para-workbench'):
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9.-]*', prefix):
         raise ValueError('Label prefix must contain only letters, digits, dots, and hyphens.')
     vault, output = Path(vault).resolve(), Path(output).resolve()
@@ -40,7 +40,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--vault',type=Path,default=root)
     parser.add_argument('--output',type=Path,default=root/'.local/launchd')
-    parser.add_argument('--label-prefix',default='org.para-librarian')
+    parser.add_argument('--label-prefix',default='org.para-workbench')
     args=parser.parse_args()
     try:
         paths=render(args.vault,args.output,args.label_prefix)

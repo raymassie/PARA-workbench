@@ -46,7 +46,7 @@ class PortableConfig(unittest.TestCase):
             for p in paths:
                 data=plistlib.loads(p.read_bytes())
                 self.assertEqual(data['WorkingDirectory'],str(root.resolve()))
-                self.assertFalse(data['RunAtLoad']);self.assertTrue(data['Label'].startswith('org.para-librarian.'))
+                self.assertFalse(data['RunAtLoad']);self.assertTrue(data['Label'].startswith('org.para-workbench.'))
                 self.assertNotIn('__VAULT_ROOT__',p.read_text())
             self.assertEqual(schedules.render(root,out),paths)
     def test_schedule_renderer_preserves_local_customizations(self):
