@@ -1,6 +1,9 @@
-# Agent Instructions
+# Agent entry point
 
-The instructions for this vault live in **`Librarian.md`**. Read that file.
+Read `Librarian.md` for this vault's canonical rules, project intake, repository
+boundaries, and controller behavior. Then consult `skills/README.md` for the
+available skill catalog and load only the workflows needed for the user's task.
 
-This is a pointer rather than a copy, so the two can't drift apart, and a real file
-rather than a symlink, so it survives checkout on Windows.
+Specialist delegation follows `skills/librarian-controller/SKILL.md`. Each skill's
+instructions live in its own canonical file; do not copy them into this entry point.
+This file is a regular pointer, not a symlink or a second copy of the rules.

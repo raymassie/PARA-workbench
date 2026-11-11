@@ -1,0 +1,11 @@
+{
+  "calendar_names": [],
+  "owner": {
+    "name": "",
+    "role": "",
+    "recurring_subjects": [],
+    "note_style": "plain, specific, concise",
+    "avoid": [],
+    "setup_complete": false
+  }
+}

@@ -2,6 +2,11 @@
 
 Refresh `Home.md`'s status section so it reflects what's actually in the vault right now. All paths are relative to the vault root.
 
+The Project desk Update button refreshes only the generated Projects line after
+task changes, using the same canonical status fields. Full Home digest still owns
+other buckets and listing changes. Keep ready-for-review distinct from done;
+checkbox progress is user-reported and does not prove deployment or delivery.
+
 1. **Projects.** List every project in `01-projects`, whether it's still a single file or has been promoted to a folder. For a single file, pull `status` from its frontmatter. For a folder, read its `README.md` and pull the `**Status:**` line. If a promoted project has no `README.md` yet, list it with status `unknown` rather than skipping it.
 2. **Areas.** List every area in `02-areas`, single file or folder. A single file has no status field, list it by name alone. A folder's `README.md` may have a `## Current state` section; pull its first line as the summary. If that section is empty, leave the summary blank rather than inventing one.
 3. **Resources.** List every top-level file and folder in `03-resources`. These have no status to report, this is a plain index of what exists.

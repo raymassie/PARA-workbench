@@ -16,4 +16,16 @@ Projects and areas start as a single file and only get promoted to a folder with
 
 Notes in `03-resources` have no template, and resource folders don't get a `README.md` either. That job belongs to the `00-wiki` topic index for the subject; a second table of contents at the folder level just duplicates it.
 
+Before filling a project template, run `skills/project-intake/SKILL.md`. Gather the
+goal, start/end dates (or explicit undecided), and end-date type; choose project
+skills with a reason and invocation stage. Both templates preserve those values
+and the marked skill plan through promotion. Never default an unanswered date.
+
+Both project templates include a canonical task block and a separate managed
+progress block for the Project desk Update button (`scripts/project-tasks.command`).
+Fill each task with a concrete action and observable completion check; preserve
+stable task IDs and never ship the example placeholder. See
+`prompts/project-update.md`. During promotion, move the current blocks to the
+README rather than leaving two live lists. Preserve all user fields such as Due.
+
 Every placeholder in these files (`<project name>`, `YYYY-MM-DD`, and so on) must be replaced with a real value before a filed note is saved. See Rule 8 in `Librarian.md`. Unknown facts should be labeled unknown rather than invented; template and instruction examples may retain placeholders.

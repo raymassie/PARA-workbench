@@ -1,7 +1,14 @@
 # Projects
 
-One folder per active project, meaning something with a specific goal and an end date.
+A project has a completable finish line; a scheduled end date is optional.
+Start as one note from `templates/project-note.md`. Once a second note is needed,
+promote it to a folder with a `README.md` from `templates/project-readme.md`.
 
-Each project folder has its own `README.md`, started from `templates/project-readme.md`, tracking status, decisions, and next steps. Run `prompts/project-digest.md` to refresh it.
+Every new project includes one actionable checkbox list. Move that list and its
+managed progress block into the README during promotion, preserving completed
+items and IDs. Double-click `scripts/project-tasks.command` for the task page and
+Update button. `prompts/project-update.md` defines updates and follow-through;
+`prompts/project-digest.md` refreshes context and status without duplicating tasks.
 
-When a project finishes, `prompts/archive-sweep.md` moves the whole folder to `04-archive/projects/`.
+Completed projects stay in place until a confirmed `prompts/archive-sweep.md`
+operation moves them to `04-archive/projects/`.

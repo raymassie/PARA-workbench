@@ -1,2 +1,10 @@
 .DS_Store
 _to_delete/
+logs/*.log
+logs/project-tasks/
+logs/*.lock
+logs/*.tmp
+scripts/__pycache__/
+scripts/tests/__pycache__/
+config.local.json
+.local/

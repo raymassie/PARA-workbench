@@ -2,6 +2,19 @@
 
 Refresh a project's or area's status. All paths are relative to the vault root.
 
+Use `prompts/project-review.md` for material evidence/knowledge gaps discovered
+during the digest. Keep one canonical task list and ask only questions needed to
+resolve meaningful uncertainty.
+
+For projects, read the canonical task list, recorded goal/dates/date certainty,
+selected skill plan, and managed state first. Preserve answered intake fields and
+deliberate skill decisions; reassess the plan when scope changes rather than
+replacing it merely because a checkbox changed. Preserve stable
+IDs, checkmarks, evidence, and completed history. Follow `prompts/project-update.md`
+for task updates and pending Librarian follow-through; do not invent completion
+from an old summary or maintain a second list. Reconcile contextual changes within
+scope and clear a pending review flag only after those actions are actually done.
+
 If the target is still a single file in `01-projects/` or `02-areas/`, not yet a folder:
 
 1. Read the file. Update its frontmatter (`status` for a project, or leave `type`/`tracking since` as-is for an area) and its body in place.
@@ -9,7 +22,7 @@ If the target is still a single file in `01-projects/` or `02-areas/`, not yet a
 
 If the target is a `01-projects/<name>/` or `02-areas/<name>/` folder:
 
-1. Read the existing `README.md` in full first, then the linked current actions, decisions, and supporting Brain notes. Respect independent implementation repository boundaries; do not recursively ingest dependency trees, build output, or unrelated application files. Inspect a specific project artifact only when needed to verify a relevant claim, without modifying it.
+1. Read the existing `README.md` in full first, then the linked current actions, decisions, and supporting vault notes. Respect independent implementation repository boundaries; do not recursively ingest dependency trees, build output, or unrelated application files. Inspect a specific project artifact only when needed to verify a relevant claim, without modifying it.
 2. Update the existing `README.md`. Don't discard history that's still relevant, such as decisions already made or context that still matters. Before shortening a long README, preserve that material in linked history or evidence notes. If there's no `README.md` yet, start from `templates/project-readme.md` for projects or `templates/area-readme.md` for areas, filling in its placeholders with real values.
 3. Write or update `README.md` with what it is, current status, key decisions so far, open questions, and next steps.
 4. Keep it short. This is a status snapshot rather than a transcript. Link out to the individual notes with `[[wikilinks]]` for detail instead of repeating them.
