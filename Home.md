@@ -49,6 +49,8 @@ Use these phrases in your assistant chat; the local Project desk handles task li
 
 ## Working the vault
 
+- Capture web pages: open `Start PARA Clipper.command` (macOS), `Start PARA Clipper.cmd` (Windows), or run `node scripts/web-clipper/start.mjs`. See the [clipper guide](scripts/web-clipper/README.md).
+
 - Start a project: follow [Project intake](skills/project-intake/SKILL.md) for the goal, dates, and appropriate skills.
 - Manage project tasks: [Open Project desk](http://127.0.0.1:8765/). Start it with `scripts/project-tasks.command`.
 - Find a workflow: [Skill catalog](skills/README.md).

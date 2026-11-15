@@ -94,3 +94,11 @@ substitution tokens, not a user's paths or identity. Run
 edited before rendering. Generation never installs or activates jobs. Configure
 the chosen assistant command and verify its job environment before any separately
 requested scheduling. Existing installed jobs are not changed by these templates.
+
+## Built-in web clipper
+
+The root `Start PARA Clipper.command`/`.cmd` launchers run the included
+`web-clipper` tool. Node.js 22+ is needed for web capture; the existing Python
+project/report tools keep their own requirements. The helper defaults to this
+vault’s `00-raw` and port 27124. See [the clipper guide](web-clipper/README.md)
+for bookmark installation, use, fallbacks, tests, and the capture lifecycle.

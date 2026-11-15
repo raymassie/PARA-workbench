@@ -8,3 +8,6 @@ scripts/__pycache__/
 scripts/tests/__pycache__/
 config.local.json
 .local/
+
+# Temporary complete captures before publication to the raw inbox.
+.para-clipper-pending/

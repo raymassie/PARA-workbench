@@ -31,3 +31,11 @@ profile write; setup answers provided for saving do.
 Finish by pointing to Home's “Ask the Librarian” menu and `skills/README.md`.
 Explain available workflows and any optional setup they require; selecting a
 workflow does not mean it ran or grant calendar/account permissions.
+
+Include the built-in web clipper in the setup handoff. Follow
+`scripts/web-clipper/README.md` for the Node.js prerequisite, platform launcher,
+and one-time bookmark installation. The helper detects this vault’s `00-raw`;
+personal folder/port overrides stay in its ignored local settings. Explain that
+Save creates a new capture, while `prompts/translate.md` separately processes it
+and moves the original unchanged into `04-archive/raw`. Launch or install only
+within the user’s requested setup scope; do not imply a background service exists.
