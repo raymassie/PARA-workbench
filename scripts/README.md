@@ -97,7 +97,8 @@ requested scheduling. Existing installed jobs are not changed by these templates
 
 ## Built-in web clipper
 
-The root `Start PARA Clipper.command`/`.cmd` launchers run the included
+The root `Start PARA Clipper - macOS.command` and
+`Start PARA Clipper - Windows.cmd` launchers run the included
 `web-clipper` tool. Node.js 22+ is needed for web capture; the existing Python
 project/report tools keep their own requirements. The helper defaults to this
 vault’s `00-raw` and port 27124. See [the clipper guide](web-clipper/README.md)
