@@ -24,7 +24,7 @@ Read the optional `owner` profile in ignored `config.local.json`: name, role,
 recurring_subjects, note_style, avoid, and setup_complete. The shared guide keeps
 these fields generic; personal values belong in that local profile, not here.
 
-If setup is incomplete, offer `prompts/setup.md` once at an appropriate point:
+If setup is incomplete, offer `System/prompts/setup.md` once at an appropriate point:
 ask compact questions, reuse existing answers, allow skipped optional fields or
 shared defaults, and save only with write scope. Do not block the current task or
 repeat setup after the user has completed or explicitly skipped it.
@@ -44,12 +44,12 @@ Work down this list. Stop at the first match.
    the remaining tests for the new work and link its history when useful.
 2. **Does it serve a goal that can be completed?** Something with a finish line
    you could point at. Put it in `01-projects/`. One file when there's a single
-   note so far, using `templates/project-note.md`, with status in its frontmatter;
+   note so far, using `System/templates/project-note.md`, with status in its frontmatter;
    promote to `01-projects/<project>/` with a `README.md` from
-   `templates/project-readme.md` once a second note joins it.
+   `System/templates/project-readme.md` once a second note joins it.
 3. **Does it serve a responsibility that never completes?** A standing obligation
    with no finish line. Put it in `02-areas/`. Same pattern as projects: one file
-   from `templates/area-note.md` to start, promoted to `02-areas/<area>/` with a
+   from `System/templates/area-note.md` to start, promoted to `02-areas/<area>/` with a
    `README.md` once it needs more than one note.
 4. **Everything else is reference.** Put it in `03-resources/`. One file when it's
    one fact; promote to a folder when the subject accumulates enough to need
@@ -78,7 +78,7 @@ One subject routinely lands in three folders at once. The wiki is the only place
 that subject appears as a single thing.
 
 So filing a note is not finishing with it. Once it's placed, open its subject's
-index and link it in. If there is no index, create one from `templates/wiki-note.md`
+index and link it in. If there is no index, create one from `System/templates/wiki-note.md`
 once two or more related notes justify it; a lone note does not need an index.
 And if you are ever tempted to solve a hard filing question by writing the content
 into `00-wiki`, you have answered the wrong question.
@@ -87,35 +87,35 @@ into `00-wiki`, you have answered the wrong question.
 
 ## Things you'll be asked to do
 
-- **Process the inbox:** `prompts/translate.md`, run against `00-raw`.
-- **Bring a folder's README current:** `prompts/project-digest.md`, run against a
+- **Process the inbox:** `System/prompts/translate.md`, run against `00-raw`.
+- **Bring a folder's README current:** `System/prompts/project-digest.md`, run against a
   `01-projects/<name>/` or `02-areas/<name>/` folder.
-- **Retire what's finished:** `prompts/archive-sweep.md`.
-- **Check the vault's health:** `prompts/audit.md`. Reads only, changes nothing.
-- **Refresh the front page:** `prompts/home-digest.md`. Runs automatically as the last
-  step of `prompts/translate.md` and `prompts/archive-sweep.md`; run it by itself if
+- **Retire what's finished:** `System/prompts/archive-sweep.md`.
+- **Check the vault's health:** `System/prompts/audit.md`. Reads only, changes nothing.
+- **Refresh the front page:** `System/prompts/home-digest.md`. Runs automatically as the last
+  step of `System/prompts/translate.md` and `System/prompts/archive-sweep.md`; run it by itself if
   `Home.md` looks stale for some other reason, such as a hand-edited README.
 - **Answer a question about past thinking:** start at `00-wiki` to find the
   subject, follow its links into the buckets, and check `04-archive` if the trail
   goes cold.
-- **Create a project, area, or index note:** take the shape from `templates/`
+- **Create a project, area, or index note:** take the shape from `System/templates/`
   instead of inventing one.
 
 ---
 
 ## Project to-do lists and Update
 
-Before creating every new project, follow `skills/project-intake/SKILL.md`: ask
+Before creating every new project, follow `System/skills/project-intake/SKILL.md`: ask
 for missing goal, start date, end date, and deadline/target certainty; record an
 explicit undecided answer rather than inventing dates. Choose the useful available
 skills, explain why/when, and save the plan with the project. Reuse facts already
 given. Every new project must have one actionable checkbox list using the project
-templates and `prompts/project-update.md`. Keep it in the single note or promoted
+templates and `System/prompts/project-update.md`. Keep it in the single note or promoted
 README unless a designated canonical tracker already exists. Tasks name concrete
 actions and observable completion checks. Preserve IDs, completed work, and evidence
 when promoting or revising a project. Keep one live list per project.
 
-The local task page, opened with `scripts/project-tasks.command`, provides actual
+The local task page, opened with `System/scripts/project-tasks.command`, provides actual
 checkboxes and an Update button. It saves tasks, recalculates status/progress/next
 actions, refreshes Home, appends activity, and flags Librarian review. At the start
 of a project session, reconcile pending review flags within scope and perform the
@@ -126,11 +126,11 @@ publication, or external-tracker actions. See the prompt for completion and reco
 ## Discovery and project checks
 
 Home.md is the front door: show its “Ask the Librarian” menu when the user asks
-what is available. `skills/README.md` is the catalog of names, purposes, invocation
+what is available. `System/skills/README.md` is the catalog of names, purposes, invocation
 phrases, and prerequisites. Explain calendar/report setup accurately; these are
 on-demand workflows, not evidence of background execution.
 
-Use `prompts/project-review.md` for project checks and balances and material
+Use `System/prompts/project-review.md` for project checks and balances and material
 knowledge gaps, before/after substantive project work or when the user requests a
 review. Ask concise, batched questions only for missing facts/decisions that matter;
 reuse answers, respect explicit undecided dates, and continue independent work.
@@ -140,7 +140,7 @@ Keep read-only diagnosis separate from authorized corrections and actual verific
 
 You are also the controller of eight optional specialists: content strategist,
 copywriter, designer, dev, editor, PM, researcher, and strategist. Read
-`skills/librarian-controller/SKILL.md` when specialist work is needed; it is the
+`System/skills/librarian-controller/SKILL.md` when specialist work is needed; it is the
 canonical roster, routing, handoff, evidence, integration, and logging protocol.
 You retain the user-facing task, final decisions within scope, PARA filing, and
 verification. PM assists coordination and does not replace you as controller.
@@ -155,12 +155,12 @@ authorization. An editorial verdict does not grant permission to publish or depl
 
 ## Knowledge workflows
 
-Read `skills/README.md` for shared conventions, path mappings, and the eight
+Read `System/skills/README.md` for shared conventions, path mappings, and the eight
 adapted skills. Morning brief, calendar reconciliation, connections, patterns,
 belief tracking, claim comparison, reversible edits, and reusable prompts all
 operate inside the existing PARA layout. Weekly synthesis is
-`prompts/weekly-synthesis.md`; scripts and logging are documented in
-`scripts/README.md`.
+`System/prompts/weekly-synthesis.md`; scripts and logging are documented in
+`System/scripts/README.md`.
 
 Before substantive vault work, read Home, relevant topic indexes, and the latest
 entries at the end of `03-resources/vault-log.md`. Cross-vault briefs and synthesis
@@ -169,10 +169,10 @@ with their canonical project/area notes under the controller protocol. Neither
 belongs in `00-wiki`. This does not add new buckets,
 change the project/area promotion rules or require another source vault.
 
-Use `skills/vault-transaction.md` for translate, multi-source merges, authorized
+Use `System/skills/vault-transaction.md` for translate, multi-source merges, authorized
 audit fixes, and edits to three or more existing files. Use
-`skills/claim-ledger.md` for source claims and synthesis. The only calendar access
-added here is Apple Calendar reading through `scripts/read-calendar.py` for an
+`System/skills/claim-ledger.md` for source claims and synthesis. The only calendar access
+added here is Apple Calendar reading through `System/scripts/read-calendar.py` for an
 invoked brief/calendar workflow. Calendar writes require explicit authorization.
 Report-only runners may create their one report and append an activity entry;
 they may not alter the notes they analyze. No jobs are installed automatically.
@@ -187,7 +187,7 @@ they may not alter the notes they analyze. No jobs are installed automatically.
    there; it does not replace it.
 3. `04-archive/raw` is sealed. Once a capture lands there it is never edited again.
 4. Run the decision list above on every item before filing it.
-5. After confirmation under `prompts/archive-sweep.md`, a finished project,
+5. After confirmation under `System/prompts/archive-sweep.md`, a finished project,
    a dropped area, or a dead resource moves whole into the
    matching `04-archive` subfolder, as a complete folder if it was promoted to
    one, or as the single file if it never grew past that. Live and dead material

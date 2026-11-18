@@ -14,14 +14,30 @@ It combines two ideas:
 
 Every path in this vault's documentation is relative to the vault root.
 
+## System organization
+
+[System](System/README.md) contains the reusable setup, workflow prompts,
+templates, specialist skills, tools, and runtime logs, matching PARA-brain's
+folder organization. The numbered folders remain the content buckets. The
+Project desk, specialist/controller library, report runners, and web clipper
+retain their existing behavior and settings.
+
+Read the System guide for local prerequisites and migration steps. In an in-use
+vault, merge the new paths while preserving personal settings, Home status,
+project task IDs/skill plans, recovery journals, and independent repositories.
+Local runtime logs now live under `System/logs/`; generated inactive schedule
+files default to `System/.local/launchd/`. Installed jobs are not changed or enabled
+by this update. Thin root prompt pointers keep the sealed archive guide's old
+workflow reference working without editing the archive.
+
 ## Setup
 
 1. Copy this whole folder. It's your vault.
-2. Open [Librarian.md](Librarian.md) and follow the guided CUSTOMIZE setup: name, role, and note preferences are saved to ignored `config.local.json`. Ask the Librarian to run `prompts/setup.md`. This is the canonical, tool-independent guide. [AGENTS.md](AGENTS.md) is a regular pointer file, not a symlink or a second copy.
+2. Open [Librarian.md](Librarian.md) and follow the guided CUSTOMIZE setup: name, role, and note preferences are saved to ignored `config.local.json`. Ask the Librarian to run `System/prompts/setup.md`. This is the canonical, tool-independent guide. [AGENTS.md](AGENTS.md) is a regular pointer file, not a symlink or a second copy.
 3. Decide how to back up and version your notes. Git is optional; if you choose it, establish the ownership boundaries below before initializing or committing. An agent must not initialize a repository or commit or push without your authorization. Without Git, use explicit status and dated evidence for archive decisions.
 4. Open the folder as an Obsidian vault. The notes are plain markdown and readable anywhere, but `[[wikilinks]]`, backlinks, and graph view are what make `00-wiki` navigable. Logseq, Foam, and Dendron work too. See "Other tools" below.
-5. Give your chosen assistant access to the vault and explicitly ask it to read `AGENTS.md`, `Librarian.md`, and `README.md`, then the prompt for the task. For example: "Read the vault instructions, then follow prompts/translate.md to process the inbox." File discovery and read/write access vary by tool; do not assume a filename or an attachment automatically loads the whole vault. If the assistant cannot access a required source or save changes, it should say so rather than claim the task was done.
-6. Set up the included web clipper. It requires [Node.js](https://nodejs.org/) 22+ and a terminal window that stays open while you clip. Install Node.js, then double-click `Start PARA Clipper - macOS.command` or `Start PARA Clipper - Windows.cmd`. The launcher opens Terminal on macOS or Command Prompt on Windows and starts the clipper. On Linux, open a terminal and run `node scripts/web-clipper/start.mjs`. First launch prepares its dependencies and opens the setup page in your browser. Drag **Clip to PARA** to your browser’s bookmarks bar. No extension, Obsidian, or AI service is needed for capture.
+5. Give your chosen assistant access to the vault and explicitly ask it to read `AGENTS.md`, `Librarian.md`, and `README.md`, then the prompt for the task. For example: "Read the vault instructions, then follow System/prompts/translate.md to process the inbox." File discovery and read/write access vary by tool; do not assume a filename or an attachment automatically loads the whole vault. If the assistant cannot access a required source or save changes, it should say so rather than claim the task was done.
+6. Set up the included web clipper. It requires [Node.js](https://nodejs.org/) 22+ and a terminal window that stays open while you clip. Install Node.js, then double-click `Start PARA Clipper - macOS.command` or `Start PARA Clipper - Windows.cmd`. The launcher opens Terminal on macOS or Command Prompt on Windows and starts the clipper. On Linux, open a terminal and run `node System/scripts/web-clipper/start.mjs`. First launch prepares its dependencies and opens the setup page in your browser. Drag **Clip to PARA** to your browser’s bookmarks bar. No extension, Obsidian, or AI service is needed for capture.
 
 ## Built-in web capture
 
@@ -41,7 +57,7 @@ another existing inbox, and stay local to your copy. Share the repository; the
 same built-in tool works with plain Markdown and any assistant with file access.
 
 Saving captures does **not** automatically process the inbox. When ready, ask:
-**“Read the vault instructions and follow prompts/translate.md to process the
+**“Read the vault instructions and follow System/prompts/translate.md to process the
 inbox.”** The Librarian reads the captures, creates or updates notes in the
 appropriate PARA bucket, adds relevant wiki links when justified, moves each
 untouched original to `04-archive/raw`, and refreshes `Home.md`. The original
@@ -51,7 +67,7 @@ Some sites or browsers block bookmarklets or form submission. Use **Load
 page** for a public URL or paste copied text into the editor. URL loading does not
 have your browser’s login session. Images remain links, rather than downloaded
 offline copies. Full setup, limitations, sharing, and maintenance instructions
-are in the [clipper guide](scripts/web-clipper/README.md). The helper runs locally
+are in the [clipper guide](System/scripts/web-clipper/README.md). The helper runs locally
 only while you keep it open; Control-C stops it. The core Markdown workflow still
 works without running the clipper.
 
@@ -60,8 +76,8 @@ works without running the clipper.
 `Home.md` is the vault's start page, alongside the top-level instructions and setup documentation. Each bucket has a short `README.md` explaining what belongs there. Those are static signs on the door, not project status trackers.
 
 - `00-raw`: drop anything here as you capture it, including notes, screenshots, links, and voice memos. Don't sort it yourself. That's the agent's job.
-- `00-wiki`: topic indexes, and no content of its own. Each note is mostly `[[wikilinks]]` into the buckets below, grouped by subject. Nothing gets filed here. New indexes start from `templates/wiki-note.md`. The vault's start page, `Home.md`, lives at the top level, not in here.
-- `01-projects`: anything with a specific goal and a completable finish line (Projects); a scheduled end date is optional. Starts as a single file from `templates/project-note.md`, status in its frontmatter. Promoted to `01-projects/<project>/` with a status `README.md` from `templates/project-readme.md` once a second note shows up, kept current with `prompts/project-digest.md`.
+- `00-wiki`: topic indexes, and no content of its own. Each note is mostly `[[wikilinks]]` into the buckets below, grouped by subject. Nothing gets filed here. New indexes start from `System/templates/wiki-note.md`. The vault's start page, `Home.md`, lives at the top level, not in here.
+- `01-projects`: anything with a specific goal and a completable finish line (Projects); a scheduled end date is optional. Starts as a single file from `System/templates/project-note.md`, status in its frontmatter. Promoted to `01-projects/<project>/` with a status `README.md` from `System/templates/project-readme.md` once a second note shows up, kept current with `System/prompts/project-digest.md`.
 - `02-areas`: ongoing responsibilities with no end date (Areas), such as health, finances, or a role at work. Same pattern as projects: single file first, promoted to a folder with a `README.md` once it needs one.
 - `03-resources`: reference material (Resources). A single fact is a single file; a topic with enough material becomes a folder. This is the default home for anything that isn't a project or an area.
 - `04-archive/`: everything inactive (Archive). Processed captures as a permanent record, plus dead folders moved here whole from projects, areas, or resources.
@@ -74,19 +90,19 @@ The wiki is an index, not a bucket. Nothing is filed into it.
 
 PARA organizes by actionability, which is what makes it good at answering "what should I be working on." It's bad at answering "what do I know about X," because a single subject scatters across a project, an area, and a handful of resource notes. `00-wiki` is the fix: one note per topic, mostly `[[wikilinks]]` into the three live buckets, grouped by theme, with brief prose on how the pieces relate. A library card catalog, which tells you where things are without holding them.
 
-`prompts/translate.md` maintains it. After filing a note, it finds or creates that topic's index and links the new material in. Obsidian's backlinks panel and graph view do the rest, so a link only needs to exist on one side.
+`System/prompts/translate.md` maintains it. After filing a note, it finds or creates that topic's index and links the new material in. Obsidian's backlinks panel and graph view do the rest, so a link only needs to exist on one side.
 
 The test for whether something belongs in a wiki note: if deleting the file would lose information, it's in the wrong place. An index should be reconstructable from the notes it points at.
 
 ## Using it day to day
 
 1. **Capture.** Write or drop anything into `00-raw`. Don't think about where it goes.
-2. **Process.** Ask your agent to run `prompts/translate.md`. It reads `00-raw`, decides what each item is for, files a clean note into `01-projects`, `02-areas`, `03-resources`, or the matching archive bucket for finished material, links it into the right `00-wiki` topic index, then moves the original into `04-archive/raw/`.
+2. **Process.** Ask your agent to run `System/prompts/translate.md`. It reads `00-raw`, decides what each item is for, files a clean note into `01-projects`, `02-areas`, `03-resources`, or the matching archive bucket for finished material, links it into the right `00-wiki` topic index, then moves the original into `04-archive/raw/`.
 3. **Review.** Start at `Home.md` for a snapshot of what's active, or `00-wiki` when you want everything on one subject regardless of which bucket it landed in.
-4. **Digest.** Ask your agent to run `prompts/project-digest.md` on a project folder any time you want its README brought up to date.
-5. **Retire.** When a project finishes, an area winds down, or a resource stops being useful, run `prompts/archive-sweep.md`. It finds inactive folders, confirms with you, then moves them into the matching `04-archive` subfolder.
-6. **Audit.** Once a month, run `prompts/audit.md`. See "Keeping it honest" below.
-7. **Front page.** Steps 2 and 5 already keep `Home.md` current on their own. Run `prompts/home-digest.md` by itself only if it falls out of date some other way.
+4. **Digest.** Ask your agent to run `System/prompts/project-digest.md` on a project folder any time you want its README brought up to date.
+5. **Retire.** When a project finishes, an area winds down, or a resource stops being useful, run `System/prompts/archive-sweep.md`. It finds inactive folders, confirms with you, then moves them into the matching `04-archive` subfolder.
+6. **Audit.** Once a month, run `System/prompts/audit.md`. See "Keeping it honest" below.
+7. **Front page.** Steps 2 and 5 already keep `Home.md` current on their own. Run `System/prompts/home-digest.md` by itself only if it falls out of date some other way.
 
 If a note ends up in the wrong bucket, ask your assistant to correct its placement and affected live links. The filing rules are in `Librarian.md`.
 
@@ -95,10 +111,10 @@ If a note ends up in the wrong bucket, ask your assistant to correct its placeme
 Every new project starts with intake for its goal, start date, end date, and
 whether the end is a firm deadline, target, or explicitly undecided. The Librarian
 asks only for missing answers, selects appropriate available skills, and records
-why and when to invoke them. `skills/project-intake/SKILL.md` is the intake workflow.
+why and when to invoke them. `System/skills/project-intake/SKILL.md` is the intake workflow.
 Each project includes one actionable checklist in its note or README.
-Double-click `scripts/project-tasks.command` to open the local Project desk, or
-run `python3 scripts/project-tasks.py --open`. The local tools use Python 3.9+ and Unix-style file locking (macOS/Linux); no AI provider or Obsidian plugin is needed. The task list remains
+Double-click `System/scripts/project-tasks.command` to open the local Project desk, or
+run `python3 System/scripts/project-tasks.py --open`. The local tools use Python 3.9+ and Unix-style file locking (macOS/Linux); no AI provider or Obsidian plugin is needed. The task list remains
 ordinary Markdown, usable in Obsidian and other editors.
 
 Use New project to supply a name, finish line, start/end-date answers, and concrete
@@ -108,51 +124,51 @@ off completed items and press Update to save progress, unlock dependent actions,
 refresh project status/next actions and Home, and log the update. Once all tasks
 are checked, confirm the finish line to mark the project done. Reopening work
 clears completion. A visible pending review flag hands contextual follow-up to
-the next Librarian session. `prompts/project-update.md` documents the task format,
+the next Librarian session. `System/prompts/project-update.md` documents the task format,
 promotion, existing-list migration, and recoverable saves.
 
 ## Finding and using workflows
 
 Home's “Ask the Librarian” menu lists common requests. Try “Morning brief”,
 “Calendar sync”, “Find connections”, “Review my projects”, or “Help customize my
-vault”. `skills/README.md` is the complete catalog with purposes and prerequisites.
+vault”. `System/skills/README.md` is the complete catalog with purposes and prerequisites.
 The Librarian selects and loads the relevant instructions; you need not memorize
 file paths. Calendar integration is optional and uses your own configured source.
 
-`prompts/project-review.md` checks goals, evidence, dependencies, stale assumptions,
+`System/prompts/project-review.md` checks goals, evidence, dependencies, stale assumptions,
 skill suitability, and missing knowledge. The Librarian asks concise material
 questions and follows through within the authorized scope. Reviews do not schedule
 agents or silently turn read-only findings into edits.
 
 ## Prompts
 
-- `prompts/translate.md`: process `00-raw` into filed notes. Run whenever the inbox has piled up.
-- `prompts/project-digest.md`: refresh a project's or area's README from its notes.
-- `prompts/archive-sweep.md`: find and retire inactive projects, areas, and resources.
-- `prompts/audit.md`: read-only health check for broken links, duplicates, misfiles, and orphans. Run monthly.
-- `prompts/home-digest.md`: refresh `Home.md`'s status section with what's actually in each bucket. Runs automatically at the end of `translate.md` and `archive-sweep.md`; run it by hand if `Home.md` looks stale for any other reason.
+- `System/prompts/translate.md`: process `00-raw` into filed notes. Run whenever the inbox has piled up.
+- `System/prompts/project-digest.md`: refresh a project's or area's README from its notes.
+- `System/prompts/archive-sweep.md`: find and retire inactive projects, areas, and resources.
+- `System/prompts/audit.md`: read-only health check for broken links, duplicates, misfiles, and orphans. Run monthly.
+- `System/prompts/home-digest.md`: refresh `Home.md`'s status section with what's actually in each bucket. Runs automatically at the end of `translate.md` and `archive-sweep.md`; run it by hand if `Home.md` looks stale for any other reason.
 
 ## Knowledge workflows and supporting scripts
 
-`skills/README.md` catalogs the knowledge workflows using the existing PARA
+`System/skills/README.md` catalogs the knowledge workflows using the existing PARA
 buckets. It documents briefs, Apple Calendar reconciliation, connection finding,
 pattern surfacing, belief tracking, claim comparison, transactions, and reusable
-prompts. `prompts/weekly-synthesis.md` adds the weekly review workflow.
+prompts. `System/prompts/weekly-synthesis.md` adds the weekly review workflow.
 
 Reports live in `03-resources/compound/`; the append-only activity record is
 `03-resources/vault-log.md`. Contradictions and user-supplied theses are resource
 notes, created only when needed. `00-wiki` remains index-only. Raw archives remain
 sealed. No separate personal vault or global tracker is required.
 
-`scripts/README.md` covers the three runners, calendar reader, runtime logs, and
+`System/scripts/README.md` covers the three runners, calendar reader, runtime logs, and
 inactive launchd definitions. No schedule is installed or enabled by this update.
 
 ## Specialist agents
 
 The Librarian can call on eight optional specialists: content
 strategist, copywriter, designer, dev, editor, PM, researcher, and strategist.
-`skills/librarian-controller/SKILL.md` defines routing and handoffs; each role has
-one `skills/<role>/SKILL.md` definition. PM coordinates dependencies while the
+`System/skills/librarian-controller/SKILL.md` defines routing and handoffs; each role has
+one `System/skills/<role>/SKILL.md` definition. PM coordinates dependencies while the
 Librarian retains control, integration, PARA placement, and final verification.
 
 Ask for an outcome normally, for example “plan an ongoing publishing program” or
@@ -165,24 +181,24 @@ with no new bucket or duplicate root-level context/status tracker.
 
 ## Templates
 
-See `templates/README.md` for what each one is and where its output lands.
+See `System/templates/README.md` for what each one is and where its output lands.
 
-- `templates/project-readme.md`: shape of a `01-projects/<project>/README.md`.
-- `templates/area-readme.md`: shape of a `02-areas/<area>/README.md`.
-- `templates/wiki-note.md`: shape of a `00-wiki` topic index.
+- `System/templates/project-readme.md`: shape of a `01-projects/<project>/README.md`.
+- `System/templates/area-readme.md`: shape of a `02-areas/<area>/README.md`.
+- `System/templates/wiki-note.md`: shape of a `00-wiki` topic index.
 
 Notes in `03-resources` are free-form and have no template.
 
 ## Keeping it honest
 
-Use the read-only checks to keep the vault trustworthy. Project review checks evidence and coherence; the structural audit checks files, links, and ownership. `prompts/audit.md` is the counterweight. Run it monthly, read what it found, fix the top few things. Skipping it is how you end up with three notes on the same topic and a link graph full of holes.
+Use the read-only checks to keep the vault trustworthy. Project review checks evidence and coherence; the structural audit checks files, links, and ownership. `System/prompts/audit.md` is the counterweight. Run it monthly, read what it found, fix the top few things. Skipping it is how you end up with three notes on the same topic and a link graph full of holes.
 
 ## Version control
 
 When preparing this framework repository for distribution, leave the numbered
 PARA folders as starter content. Keep framework development trackers outside that
 content and run test captures in temporary vaults. Built-in feature source,
-tests, and guides ship under `scripts/`; local settings and dependencies stay
+tests, and guides ship under `System/scripts/`; local settings and dependencies stay
 ignored. The source checkout itself is the development project.
 
 If you use a root Git repository, it owns vault material: notes, status summaries, wiki indexes, context, decisions, instructions, templates, and prompts. Project source, tests, assets, build configuration, and implementation documentation may stay physically under `01-projects/<project>/` in their own independent repositories. Neither repository should absorb the other's files. Intentional nested repositories are valid.
@@ -218,13 +234,13 @@ local settings such as calendar names. Keep personal values out of shared files.
 Tools locate the vault from their own files. macOS Calendar and launchd helpers
 are optional integrations; the core Markdown workflow is independent of them.
 Generate machine-specific launchd definitions locally with
-`python3 scripts/render-schedules.py`; this does not install or enable jobs.
+`python3 System/scripts/render-schedules.py`; this does not install or enable jobs.
 
 ## Other tools
 
 The vault is plain markdown in plain folders, so any editor can read it. The one hard dependency is `[[wikilinks]]`, which need a tool that resolves them: **Obsidian**, **Logseq**, **Foam** (VS Code), or **Dendron**. Plain markdown viewers, including GitHub's web interface, render `[[like this]]` as literal text and won't link anything.
 
-If you'd rather keep it universally readable, change the linking rule in `Librarian.md` and `prompts/translate.md` to relative markdown links (`[text](../00-wiki/note.md)`). Backlinks and graph support then depend on your editor, while links render in standard Markdown viewers.
+If you'd rather keep it universally readable, change the linking rule in `Librarian.md` and `System/prompts/translate.md` to relative markdown links (`[text](../00-wiki/note.md)`). Backlinks and graph support then depend on your editor, while links render in standard Markdown viewers.
 
 Hosted tools need a connector or an import/export workflow that preserves the vault's files and links. Access to a hosted document alone is not access to the local vault. Confirm what your tool can read and write before using it for maintenance.
 
@@ -235,10 +251,10 @@ No particular AI provider, model, command-line tool, or editor is required. Use 
 Run the deterministic tool tests with:
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/tests -v
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s System/scripts/tests -v
 ```
 
-Run the built-in clipper checks with `npm test --prefix scripts/web-clipper`
+Run the built-in clipper checks with `npm test --prefix System/scripts/web-clipper`
 after its first launch has installed dependencies.
 
 Tests use isolated temporary vaults and mocked calendar calls. They do not invoke

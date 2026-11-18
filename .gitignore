@@ -1,13 +1,13 @@
 .DS_Store
 _to_delete/
-logs/*.log
-logs/project-tasks/
-logs/*.lock
-logs/*.tmp
-scripts/__pycache__/
-scripts/tests/__pycache__/
+System/logs/*.log
+System/logs/project-tasks/
+System/logs/*.lock
+System/logs/*.tmp
+System/scripts/__pycache__/
+System/scripts/tests/__pycache__/
 config.local.json
-.local/
+System/.local/
 
 # Temporary complete captures before publication to the raw inbox.
 .para-clipper-pending/
