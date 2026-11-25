@@ -94,6 +94,14 @@ rounds; a repeated failure of the same criterion twice should expose the missing
 premise rather than trigger endless rewrites. Continue independent work while a
 real external decision/access blocker is pending.
 
+For file production across dependencies, follow
+[version-bound task review](references/task-review.md): worker check, independent
+checker, then Librarian confirmation of the actual same version. Use the existing
+canonical task IDs and `after:` edges; receipts are adjacent evidence, not another
+tracker. After a passed stage, execute the next eligible authorized task or review
+in the same session. Inspect exact blockers and continue independent work. Use
+explicitly labeled sequential role passes only when independence is not required.
+
 ## Evidence and decision authority
 
 Preserve evidence markers in working notes and handoffs:

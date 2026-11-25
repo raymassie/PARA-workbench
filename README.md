@@ -127,6 +127,37 @@ clears completion. A visible pending review flag hands contextual follow-up to
 the next Librarian session. `System/prompts/project-update.md` documents the task format,
 promotion, existing-list migration, and recoverable saves.
 
+## Librarian review and follow-through
+
+The Librarian coordinates the assignment and confirms submissions. For multi-stage
+file production, the worker checks its output, a separate checker reviews the same
+version, and the Librarian inspects the result and evidence before acceptance.
+After acceptance, the Librarian executes the next eligible authorized action in
+the same session. A blocked branch records its exact reason while independent
+work continues. [The review protocol](System/skills/librarian-controller/references/task-review.md)
+explains the evidence and explicitly limited sequential fallback when separate
+agents are unavailable; required independence remains a separate gate.
+
+Optional review receipts sit beside the existing canonical task list, using its
+IDs and dependencies. The read-only helper detects stale task definitions and
+input/output versions, missing review and eligible unfinished work:
+
+```sh
+python3 -B System/scripts/project-review.py --project 01-projects/example.md --assert-stop
+```
+
+Replace the path with the actual project note (or its promoted README). Checked
+boxes remain reported progress. File acceptance and the user's confirmation of the
+current finish line are separate checks; manual and legacy tasks keep their
+existing evidence workflow. The helper reports what remains; the Librarian does
+the work. It does not dispatch agents or start a background process.
+
+[Capture acceptance](System/skills/capture-acceptance.md) also supplies source-to-Home
+review and the optional no-Git `check-capture.py` helper. Mechanical checks support
+source preservation and declared coverage; complete source meaning, table cells,
+classification and authority still require direct review. The existing desk,
+single task list, PARA filing rules and sealed raw/archive sources retain their roles.
+
 ## Finding and using workflows
 
 Home's “Ask the Librarian” menu lists common requests. Try “Morning brief”,

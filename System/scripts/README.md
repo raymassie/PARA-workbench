@@ -29,6 +29,23 @@ is shown in the project and handled in the next Librarian session.
 The report runner and task updater share `System/logs/vault-write.lock` around activity
 writes, preventing those tools from losing each other’s log entries.
 
+## Read-only project review
+
+`project-review.py --project 01-projects/<note>.md --assert-stop` checks optional
+version-bound file-review receipts against canonical task IDs, dependencies and
+current input/output bytes. It reports the next eligible authorized work or review;
+it never executes tasks or writes notes. Existing task-page UI/status behavior and
+manual-task workflows are unchanged. See
+[the review protocol](../skills/librarian-controller/references/task-review.md)
+for receipt format, explicit sequential fallback and honest completion limits.
+
+## Capture acceptance
+
+`check-capture.py` is an optional, read-only Python 3.9+ helper that works without
+Git or local configuration. See `System/skills/capture-acceptance.md` for its
+manifest, invocation and explicit semantic limits. It supports the Librarian’s
+review; a mechanical PASS alone does not accept a capture or authorize a write.
+
 ## Report runners
 
 Three report runners share `run-report.py`:

@@ -88,6 +88,7 @@ library is not a mandatory sequence. The workflows are on-demand.
 
 | Ask for | Purpose | Required context/setup | Workflow |
 |---|---|---|---|
+| Verify a filed capture | Source comparison, Librarian acceptance and optional read-only checks | Actual source, saved output and pre-state | `System/skills/capture-acceptance.md` |
 | Morning brief | Priorities, open loops, next actions | Existing notes; calendar is optional | `System/skills/morning-brief.md` |
 | Calendar sync | Reconcile schedule and intentions | An authorized calendar source or optional local calendar configuration | `System/skills/calendar-sync.md` |
 | Find connections | Non-obvious relationships in filed notes | Related substantive notes | `System/skills/connection-finder.md` |

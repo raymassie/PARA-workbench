@@ -8,6 +8,10 @@ for duplicate subjects as well as the target bucket. Existing-match merges remai
 authorized by this prompt; flag genuinely incompatible claims rather than choosing
 a side.
 
+For each capture, use `System/skills/capture-acceptance.md` to preserve pre-state,
+review source coverage and confirm the saved result. The Librarian owns acceptance
+and continues the next eligible capture in the authorized batch after PASS.
+
 ## 1. Get the content
 
 - Text and markdown files: read as-is.

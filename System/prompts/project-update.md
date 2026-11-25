@@ -89,6 +89,14 @@ and write only within the authorized scope. Record actual checks, affected paths
 and any unresolved blocker. Archive completion still follows archive-sweep's
 confirmation rule; done projects remain in place until then.
 
+For multi-stage file production, use
+`System/skills/librarian-controller/references/task-review.md` for version-bound
+worker/checker/Librarian receipts and the optional read-only `project-review.py`
+routing check. Keep receipts adjacent to the canonical blocks. They distinguish
+accepted artifacts from reported checkboxes; they do not change task-page save
+format, status, permission, or explicit user finish-line confirmation. Human actions
+and legacy notes retain their existing evidence reconciliation workflow.
+
 ## Existing notes and promotion
 
 Existing notes without the two marked blocks appear read-only in the task page

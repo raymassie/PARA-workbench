@@ -169,6 +169,10 @@ with their canonical project/area notes under the controller protocol. Neither
 belongs in `00-wiki`. This does not add new buckets,
 change the project/area promotion rules or require another source vault.
 
+For capture processing and filed submissions, use `System/skills/capture-acceptance.md`
+to review actual source coverage, preservation, links and Home before Librarian
+acceptance, then continue the next eligible capture in the authorized batch.
+
 Use `System/skills/vault-transaction.md` for translate, multi-source merges, authorized
 audit fixes, and edits to three or more existing files. Use
 `System/skills/claim-ledger.md` for source claims and synthesis. The only calendar access
